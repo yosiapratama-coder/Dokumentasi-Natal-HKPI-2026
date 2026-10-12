@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#102c25">
+  <meta name="description" content="Arsip dokumentasi Natal Himpunan Kristen Pelita Indonesia. Buka folder dokumentasi dan unduh foto atau video melalui Google Drive.">
+  <title>Dokumentasi Natal | Himpunan Kristen Pelita Indonesia</title>
+  <style>
+    :root {
+      --forest: #102c25;
+      --forest-2: #194438;
+      --cream: #fbf7ed;
+      --gold: #d8b56d;
+      --muted: #6e7d73;
+      --white: #fffefa;
+      --line: rgba(16,44,37,.13);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; color: var(--forest); background: var(--cream);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    a { color: inherit; }
+    .hero {
+      min-height: 440px; position: relative; overflow: hidden; color: var(--white);
+      background:
+        radial-gradient(circle at 80% 20%, rgba(216,181,109,.18), transparent 23%),
+        radial-gradient(circle at 12% 100%, rgba(216,181,109,.12), transparent 27%),
+        linear-gradient(135deg, #0b211c 0%, #153b30 55%, #1b4939 100%);
+      padding: 28px 22px 76px;
+    }
+    .hero:before, .hero:after {
+      content: "✦"; position: absolute; color: var(--gold); opacity: .6;
+      font-size: 25px; pointer-events: none;
+    }
+    .hero:before { top: 100px; right: 12%; }
+    .hero:after { top: 185px; right: 24%; font-size: 15px; }
+    .nav, .hero-content, main, footer { width: min(1080px, 100%); margin: 0 auto; }
+    .nav { display:flex; align-items:center; justify-content:space-between; gap:18px; }
+    .brand { display:flex; align-items:center; gap:12px; font-size:12px; font-weight:800; letter-spacing:.12em; text-transform:uppercase; }
+    .brand-logo { width:48px; height:48px; object-fit:contain; border-radius:50%; background:#fff; padding:2px; flex:0 0 auto; }
+    .nav-link { text-decoration:none; font-size:13px; color:#f3ead8; border-bottom:1px solid rgba(243,234,216,.45); padding-bottom:4px; }
+    .hero-content { padding-top:80px; position:relative; z-index:1; }
+    .eyebrow { color:var(--gold); font-size:11px; font-weight:800; letter-spacing:.22em; text-transform:uppercase; }
+    h1 { max-width:720px; margin:18px 0 18px; font-family: Georgia, "Times New Roman", serif; font-size:clamp(42px, 7vw, 76px); font-weight:500; line-height:.99; letter-spacing:-.04em; }
+    h1 span { color:var(--gold); font-style:italic; }
+    .intro { max-width:570px; color:#e2e9e1; line-height:1.75; font-size:15px; margin:0; }
+    .hero-actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:28px; }
+    .button { display:inline-flex; align-items:center; justify-content:center; gap:9px; padding:13px 18px; border-radius:5px; text-decoration:none; font-weight:750; font-size:13px; transition:transform .2s, background .2s; }
+    .button:hover { transform:translateY(-2px); }
+    .button-gold { background:var(--gold); color:#142d24; }
+    .button-outline { border:1px solid rgba(255,255,255,.35); color:white; }
+    main { padding:0 22px 72px; }
+    .section-head { display:flex; justify-content:space-between; align-items:end; gap:22px; padding:54px 0 24px; }
+    .section-kicker { color:#8b713e; font-size:10px; letter-spacing:.2em; text-transform:uppercase; font-weight:850; }
+    h2 { margin:8px 0 0; font-family:Georgia, "Times New Roman", serif; font-size:clamp(28px,4vw,40px); font-weight:500; letter-spacing:-.025em; }
+    .section-desc { max-width:350px; margin:0; color:var(--muted); font-size:13px; line-height:1.7; }
+    .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
+    .card { background:var(--white); border:1px solid var(--line); border-radius:9px; overflow:hidden; display:flex; flex-direction:column; min-height:230px; box-shadow:0 8px 28px rgba(16,44,37,.035); }
+    .card-top { padding:22px 23px 18px; display:flex; justify-content:space-between; align-items:flex-start; gap:15px; }
+    .cam-icon { width:44px; height:44px; border-radius:7px; display:grid; place-items:center; background:#edf1e9; color:var(--forest-2); flex:0 0 auto; }
+    .cam-icon svg { width:23px; height:23px; }
+    .cam-label { margin:0 0 6px; color:#8b713e; font-size:10px; font-weight:850; letter-spacing:.16em; text-transform:uppercase; }
+    h3 { margin:0; font-family:Georgia, "Times New Roman", serif; font-weight:500; font-size:25px; }
+    .card p { margin:0; padding:0 23px; color:var(--muted); font-size:13px; line-height:1.65; }
+    .card-bottom { margin-top:auto; padding:22px 23px; display:flex; align-items:center; justify-content:space-between; gap:12px; }
+    .folder-note { font-size:11px; color:#78857c; }
+    .open-link { text-decoration:none; display:inline-flex; align-items:center; gap:8px; padding:10px 13px; background:var(--forest); color:white; border-radius:4px; font-size:12px; font-weight:750; white-space:nowrap; }
+    .open-link:hover { background:var(--forest-2); }
+    .download-panel { margin-top:30px; background:#eee9dc; border-radius:9px; padding:26px; display:grid; grid-template-columns:1fr auto; align-items:center; gap:22px; }
+    .download-panel h3 { font-size:23px; }
+    .download-panel p { max-width:620px; margin:8px 0 0; color:#66756a; font-size:13px; line-height:1.7; }
+    .download-panel .button { background:var(--forest); color:white; }
+    .steps { margin-top:34px; display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+    .step { border-top:1px solid var(--line); padding-top:16px; }
+    .step-num { color:#a08246; font-family:Georgia,serif; font-size:22px; }
+    .step h4 { margin:8px 0 6px; font-size:14px; }
+    .step p { margin:0; color:var(--muted); font-size:12px; line-height:1.7; }
+    footer { padding:26px 22px 35px; border-top:1px solid var(--line); display:flex; justify-content:space-between; gap:18px; color:#718076; font-size:11px; line-height:1.7; }
+    footer strong { color:var(--forest); }
+    .cross { color:var(--gold); }
+    @media (max-width:650px) {
+      .hero { min-height:420px; padding:22px 18px 65px; }
+      .hero-content { padding-top:68px; }
+      .nav-link { font-size:11px; }
+      .brand { font-size:10px; letter-spacing:.07em; }
+      .brand-logo { width:40px; height:40px; }
+      main { padding:0 18px 50px; }
+      .section-head { display:block; padding-top:40px; }
+      .section-desc { margin-top:12px; }
+      .grid { grid-template-columns:1fr; }
+      .download-panel { grid-template-columns:1fr; padding:22px; }
+      .download-panel .button { justify-self:start; }
+      .steps { grid-template-columns:1fr; gap:17px; }
+      footer { padding-left:18px; padding-right:18px; flex-direction:column; gap:6px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <nav class="nav" aria-label="Navigasi utama">
+      <div class="brand"><img class="brand-logo" src="logo_hkpi.png" alt="Logo Himpunan Kristen Pelita Indonesia"><span>Himpunan Kristen<br>Pelita Indonesia</span></div>
+      <a class="nav-link" href="#dokumentasi">Jelajahi dokumentasi ↓</a>
+    </nav>
+    <div class="hero-content">
+      <div class="eyebrow">Arsip momen penuh kasih</div>
+      <h1>Dokumentasi<br><span>Natal</span></h1>
+      <p class="intro">Sebuah ruang untuk mengenang sukacita, kebersamaan, dan kasih Natal bersama Himpunan Kristen Pelita Indonesia. </p>
+      <div class="hero-actions">
+        <a class="button button-gold" href="#dokumentasi">Lihat dokumentasi <span aria-hidden="true">↘</span></a>
+        <a class="button button-outline" href="https://drive.google.com/drive/folders/1Jo_glgDD8T8ZrF159Cp45hB3xi6e5_tl?usp=sharing" target="_blank" rel="noopener noreferrer">Buka folder utama ↗</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="dokumentasi">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">Galeri dokumentasi</div>
+          <h2>Pilih folder kamera</h2>
+        </div>
+        <p class="section-desc">Shalom! 🤗 ini dokumentasi Natal kita ya. terimakasih, God bless all! 💫</p>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <div class="card-top">
+            <div><div class="cam-label">Arsip kamera 01</div><h3>Cam 1</h3></div>
+            <div class="cam-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7l1.5-3h5L16 7"/><circle cx="12" cy="13.5" r="3.5"/></svg></div>
+          </div>
+          <p>Dokumentasi Natal dari sudut pandang kamera pertama.</p>
+          <div class="card-bottom"><span class="folder-note">Google Drive · Folder Cam 1</span><a class="open-link" href="https://drive.google.com/drive/folders/1TRp0xe57rHvcxuv3GbmeN4J0kMP92YEA?usp=sharing" target="_blank" rel="noopener noreferrer">Buka folder ↗</a></div>
+        </article>
+
+        <article class="card">
+          <div class="card-top">
+            <div><div class="cam-label">Arsip kamera 02</div><h3>Cam 2</h3></div>
+            <div class="cam-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7l1.5-3h5L16 7"/><circle cx="12" cy="13.5" r="3.5"/></svg></div>
+          </div>
+          <p>Temukan momen kebersamaan yang terekam oleh kamera kedua.</p>
+          <div class="card-bottom"><span class="folder-note">Google Drive · Folder Cam 2</span><a class="open-link" href="https://drive.google.com/drive/folders/1SGHzzPbXe8Yka1JwnSkXDluHfo9BQ7mz?usp=sharing" target="_blank" rel="noopener noreferrer">Buka folder ↗</a></div>
+        </article>
+
+        <article class="card">
+          <div class="card-top">
+            <div><div class="cam-label">Arsip kamera 03</div><h3>Cam 3</h3></div>
+            <div class="cam-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7l1.5-3h5L16 7"/><circle cx="12" cy="13.5" r="3.5"/></svg></div>
+          </div>
+          <p>Lihat kembali rangkaian acara dan kenangan dari kamera ketiga.</p>
+          <div class="card-bottom"><span class="folder-note">Google Drive · Folder Cam 3</span><a class="open-link" href="https://drive.google.com/drive/folders/1btt37sP2oDiGi5elFkXlav3GoFHhxuvb?usp=sharing" target="_blank" rel="noopener noreferrer">Buka folder ↗</a></div>
+        </article>
+
+        <article class="card">
+          <div class="card-top">
+            <div><div class="cam-label">Arsip kamera 04</div><h3>Cam 4</h3></div>
+            <div class="cam-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7l1.5-3h5L16 7"/><circle cx="12" cy="13.5" r="3.5"/></svg></div>
+          </div>
+          <p>Arsip tambahan untuk melengkapi cerita Natal kita bersama.</p>
+          <div class="card-bottom"><span class="folder-note">Google Drive · Folder Cam 4</span><a class="open-link" href="https://drive.google.com/drive/folders/1qFTlzysY_CqTeos306R7Y-3DDBpCOHSF?usp=sharing" target="_blank" rel="noopener noreferrer">Buka folder ↗</a></div>
+        </article>
+      </div>
+
+      <div class="download-panel">
+        <div>
+          <div class="section-kicker">Himpunan Kristen Pelita Indonesia</div>
+          <h3>Dokumentasi lengkap Natal</h3>
+          <p>Buka folder utama untuk melihat kumpulan dokumentasi. Pengunduhan dilakukan melalui Google Drive; ketersediaannya mengikuti izin akses dan pengaturan file dari pemilik folder.</p>
+        </div>
+        <a class="button" href="https://drive.google.com/drive/folders/1Jo_glgDD8T8ZrF159Cp45hB3xi6e5_tl?usp=sharing" target="_blank" rel="noopener noreferrer">Buka arsip utama ↗</a>
+      </div>
+
+      <section aria-labelledby="cara-unduh">
+        <div class="section-head" style="padding-bottom:18px">
+          <div><div class="section-kicker">Panduan singkat</div><h2 id="cara-unduh">Cara mengunduh file</h2></div>
+        </div>
+        <div class="steps">
+          <div class="step"><div class="step-num">01</div><h4>Pilih folder</h4><p>Klik tombol “Buka folder” pada kamera yang ingin kamu lihat.</p></div>
+          <div class="step"><div class="step-num">02</div><h4>Pilih foto atau video</h4><p>Di Google Drive, buka file yang ingin disimpan. Untuk beberapa file, pilih file yang diperlukan terlebih dahulu.</p></div>
+          <div class="step"><div class="step-num">03</div><h4>Unduh ke perangkat</h4><p>Klik ikon Download atau menu titik tiga lalu pilih “Download”. Jika tidak tersedia, minta izin akses kepada pemilik folder.</p></div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    <div><strong>Himpunan Kristen Pelita Indonesia</strong><br>Arsip dokumentasi Natal · Dibuat untuk mengenang kebersamaan.</div>
+    <div><strong>BPH Dokumentasi:</strong> Yosia Pratama Simanjuntak<br><span class="cross">✦</span> Kiranya damai dan sukacita Natal menyertai kita semua.</div>
+  </footer>
+</body>
+</html>
